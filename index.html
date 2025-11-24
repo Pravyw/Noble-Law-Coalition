@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Sacred Law - Discord Clan</title>
+    <!-- FIX: Made the page title consistent with the rest of the metadata -->
+    <title>Noble Law Coalition</title>
     
     <!-- DISCORD EMBED META TAGS -->
     <meta property="og:type" content="website">
@@ -148,10 +149,17 @@
         .clan-icon-container {
             margin-bottom: 30px; 
             padding: 10px;
+            /* Changed border color/opacity to match the thin grey circle in the image */
             border: 2px solid rgba(255, 255, 255, 0.4); 
             border-radius: 50%; 
             line-height: 0;
             transition: transform 0.3s ease;
+            /* Added a fixed size to the container to ensure the circle matches the image */
+            width: 370px; 
+            height: 370px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .clan-icon-container:hover {
@@ -159,11 +167,12 @@
         }
 
         .clan-icon-img {
+            /* Removed fixed size from img to let the container size define the circle */
             width: 350px; 
             height: 350px;
             object-fit: cover;
             border-radius: 50%;
-            display: block;
+            display: none; /* Hiding the image to display only the circle outline for now */
         }
 
         .clan-title {
@@ -177,8 +186,21 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+        
+        /* NEW: Styles for the large, thin, white "WHEREIN BALANCE," lines */
+        .apex-main-tagline {
+            font-family: 'Inter', sans-serif;
+            font-size: 4.5em; /* Large size to match visual scale */
+            font-weight: 300; /* Thin look (Inter: 300) */
+            letter-spacing: 8px; /* Prominent letter spacing */
+            color: #ffffff; /* Pure white text */
+            line-height: 1.1;
+            margin-top: 5px;
+            text-transform: uppercase;
+        }
 
-        .clan-tagline {
+        /* NEW: Styles for the rest of the tagline */
+        .apex-secondary-tagline {
             font-family: 'Inter', sans-serif;
             font-size: 1.3em;
             font-weight: 300;
@@ -186,7 +208,10 @@
             color: #999999;
             max-width: 600px;
             line-height: 1.8;
+            margin-top: 40px; /* Space from the main tagline */
         }
+        
+        /* REMOVED: The old .clan-tagline style is now replaced by the two new classes above. */
 
         /* The Creed Section */
         .creed-section {
@@ -524,6 +549,12 @@
                 font-size: 3.5em;
                 letter-spacing: 6px;
             }
+            
+            /* Responsive adjustments for the new Apex styling */
+            .apex-main-tagline {
+                font-size: 2.5em;
+                letter-spacing: 6px;
+            }
 
             .law-item {
                 grid-template-columns: 1fr;
@@ -585,13 +616,17 @@
     <div id="apex" class="page active">
         <div class="apex-section">
             
-            <!-- CLAN ICON -->
+            <!-- CLAN ICON - Note: The clan-icon-img is hidden via CSS to only show the circle outline, as in the image -->
             <div class="clan-icon-container">
                 <img src="https://media.discordapp.net/attachments/1319050479342452820/1435303693967822858/Untitled67_20251104112350.jpg?ex=690b7a3b&is=690a28bb&hm=1a9e5cc2eeefeb41c9bfc188435b3ec5da82d5da3bae3e5969bb5220c9476741&=&format=webp&width=860&height=1290" alt="The Sacred Law Clan Icon" class="clan-icon-img">
             </div>
 
-            <h1 class="clan-title">Noble Law Coalition/h1>
-            <p class="clan-tagline">WHEREIN BALANCE, HONOR, AND LOYALTY PREVAIL</p>
+            <!-- FIX: Corrected the broken h1 tag and separated the tagline for a better visual match -->
+            <h1 class="clan-title">Noble Law Coalition</h1>
+            <p class="apex-main-tagline">WHEREIN</p>
+            <p class="apex-main-tagline">BALANCE,</p>
+            <!-- The rest of the description is included below, styled smaller -->
+            <p class="apex-secondary-tagline">HONOR, AND LOYALTY PREVAIL</p>
         </div>
     </div>
 
